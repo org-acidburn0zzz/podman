@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Cut a libpod release.  Usage:
+# Cut a podman release.  Usage:
 #
 #   $ hack/release.sh <version> <next-version>
 #

@@ -1,3 +1,171 @@
+- Changelog for v (2020-07-17)
+  * docs: document the new slirp4netns options
+  * network, slirp4netns: add option to allow host loopback
+  * libpod: pass down network options
+  * The compat create endpoint should 404 on no such image
+  * Bump github.com/containers/common from 0.15.2 to 0.16.0
+  * Bump k8s.io/api from 0.18.5 to 0.18.6
+  * Bump k8s.io/apimachinery from 0.18.5 to 0.18.6
+  * Bump github.com/containers/conmon
+  * vendor golang.org/x/text@v0.3.3
+  * Fix `podman system connection` panic
+  * Preserve passwd on container restart
+  * Fix & add notes regarding problematic language in codebase
+  * Error on rootless mac and ip addresses
+  * allow switching of port-forward approaches in rootless/using slirp4netns
+  * Fix "Error: unrecognized protocol \"TCP\" in port mapping"
+  * APIv2 tests: fix race condition causing CI flake
+  * system tests: check for masked-device leaks
+  * system tests: new tests for run, exec
+  * Bump github.com/uber/jaeger-client-go
+  * Bump github.com/containers/storage from 1.21.0 to 1.21.1
+  * Fix lint
+  * Add SystemdMode to inspect for containers
+  * play-kube: add suport for "IfNotPresent" pull type
+  * Mask out /sys/dev to prevent information leak from the host
+  * Fix handling of entrypoint
+  * docs: user namespace can't be shared in pods
+  * When determining systemd mode, use full command
+  * Populate remaining unused fields in `pod inspect`
+  * Include infra container information in `pod inspect`
+  * [CI:DOCS]Do not copy policy.json into gating image
+  * Fix systemd pid 1 test
+  * Remove outdated seccomp policy
+  * Correctly print STDOUT on non-terminal remote exec
+  * Pids-limit should only be set if the user set it
+  * Don't setup AppArmor provile for privileged pods
+  * Ensure sig-proxy default is propagated in start
+  * Fix container and pod create commands for remote create
+  * version/info: format: allow more json variants
+  * Bump github.com/containers/storage from 1.20.2 to 1.21.0
+  * Fix: Correct connection counters for hijacked connections
+  * Fix: Hijacking v2 endpoints to follow rfc 7230 semantics
+  * Remove hijacked connections from active connections list
+  * Remove all instances of named return "err" from Libpod
+  * Vendor in new version of Buildah
+  * Remove dependency on github.com/opencontainers/libpod/configs
+  * logs: enable e2e tests
+  * log API: add context to allow for cancelling
+  * Fix saving in oci format
+  * fix API: Create container with an invalid configuration
+  * Update release notes on Master for v2.0.2
+  * Minor: Remove two inaccurate comments
+  * Cirrus: Rotate keys post repo. rename
+  * fix race condition in `libpod.GetEvents(...)`
+  * Add username to /etc/passwd inside of container if --userns keep-id
+  * Add support for Filter query parameter to list images api
+  * Disable mount tests as rootless
+  * Change buildtag for remoteclient to remote for testing
+  * BATS system tests for new sdnotify
+  * Implement --sdnotify cmdline option to control sd-notify behavior
+  * Fix bug where `podman mount` didn't error as rootless
+  * move go module to v2
+  * Bump github.com/onsi/ginkgo from 1.13.0 to 1.14.0
+  * auto-update: clarify systemd-unit requirements
+  * podman ps truncate the command
+  * Set engine env from common config
+  * Fix issue #6803 Container inspect endpoint returns null for NetworkSettings/Ports
+  * Bump imagebuilder to v1.1.6 in upstream
+  * Add --tz flag to create, run
+  * Print errors from individual containers in pods
+  * stop podman service in e2e tests
+  * Fix `system service` panic from early hangup in events
+  * Bump github.com/opentracing/opentracing-go from 1.1.0 to 1.2.0
+  * APIv2:fix: Handle docker volume force as expected
+  * APIv2: Add docker compatible volume endpoints
+  * Bump k8s.io/api from 0.18.4 to 0.18.5
+  * test.apiv2: add testing for container initializing
+  * Bump github.com/containers/common from 0.14.3 to 0.15.1
+  * Created timestamp returned by imagelist should be in unix format
+  * APIv2 tests: usability: better test logging
+  * docs: recommend alternatives to podman inspect
+  * utils: fix parsing of cgroup with : in the name
+  * Bump k8s.io/apimachinery from 0.18.4 to 0.18.5
+  * Set TMPDIR to /var/tmp by default if not set
+  * fix: Don't override entrypoint if it's `nil`
+  * Add a note on the APIs supported by `system service`
+  * test: add tests for --user and volumes
+  * container: move volume chown after spec generation
+  * libpod: volume copyup honors namespace mappings
+  * Set console mode for windows
+  * systemd system test: run auto-update
+  * Allow empty host port in --publish flag
+  * Fix a bug with APIv2 compat network remove to log an ErrNetworkNotFound instead of nil
+  * Fixes --remote flag issues
+  * Ensure umask is set appropriately for 'system service'
+  * system tests: add pod, inspect testing
+  * specgen: fix order for setting rlimits
+  * Revert sending --remote flag to containers
+  * vendor github.com/containers/common@v0.14.3
+  * podman: add new cgroup mode split
+  * systemd generate: allow manual restart of container units in pods
+  * e2e inspect: HostConfig.SecurityOpt
+  * generate systemd: improve pod-flags filter
+  * Print port mappings in `ps` for ctrs sharing network
+  * Fix python dockerpy tests
+  * Add support for dangling filter to volumes
+  * Friendly amendment for pr 6751
+  * Set syslog for exit commands on log-level=debug
+  * Add containers.conf default file for windows and MAC Installs
+  * Docs: consistency between man / --help
+  * utils: drop default mapping when running uid!=0
+  * podman run/create: support all transports
+  * Fix inspect to display multiple label: changes
+  * podman untag: error if tag doesn't exist
+  * Set stop signal to 15 when not explicitly set
+  * libpod: specify mappings to the storage
+  * APIv2: Return `StatusCreated` from volume creation
+  * APIv2:fix: Remove `/json` from compat network EPs
+  * Fix ssh-agent support
+  * APIv2:doc: Fix swagger doc to refer to volumes
+  * BATS tests: new too-many-arguments test
+  * Reformat inspect network settings
+  * Add podman network to bash command completions
+  * Fix typo in manpage for `podman auto update`.
+  * Add tests for --privileged with other flags
+  * Add JSON output field for ps
+  * V2 podman system connection
+  * wip
+  * system tests: invoke with abs path to podman
+  * image load: no args required
+  * system tests: new rm, build tests
+  * Fix conflicts between privileged and other flags
+  * Re-add PODMAN_USERNS environment variable
+  * libpod/containers/json: alias last -> limit
+  * Bump required go version to 1.13
+  * Makefile: allow customizable GO_BUILD
+  * Add explicit command to alpine container in test case.
+  * "pod" was being truncated to "po" in the names of the generated systemd unit files.
+  * Use POLL_DURATION for timer
+  * rootless_linux: improve error message
+  * Stop following logs using timers
+  * Add container name to the /etc/hosts within the container
+  * Update release notes for v2.0.0
+  * Update README to reflect that v2.0.0 has been released
+  * Bump master to v2.1.0-dev following release of v2.0
+  * Fixes #6670
+  * Correct logic for demux'ing channels
+  * Account for non-default port number in image name
+  * correct the absolute path of `rm` executable
+  * Poll on events for file reading
+  * Add --preservefds to podman run
+  * podman images --format json: pretty print
+  * Fix podman build handling of --http-proxy flag
+  * search: allow wildcards
+  * CI: force registry:2.6
+  * Fix remote docs
+  * Allow recursive dependency start with Init()
+  * Bump k8s.io/apimachinery from 0.18.3 to 0.18.4
+  * unflake rmi tests
+  * Bump k8s.io/api from 0.18.3 to 0.18.4
+  * Bump go.etcd.io/bbolt from 1.3.4 to 1.3.5
+  * Podman system service is no longer experimental
+  * Handle dropping capabilties correctly when running as non root user
+  * Don't ignore --user flag in rootless --userns keepid
+  * Bump to v2.0.0-dev
+  * Makefile: install.varlink needs to create dirs
+  * Do not share container log driver for exec
+
 - Changelog for v2.0.0-rc7 (2020-06-17)
   * Bump Buildah to v1.15.0
   * Move logs functionality to separate file for APIv2
